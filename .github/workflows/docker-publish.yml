@@ -42,6 +42,7 @@ jobs:
         with:
           node-version: 16
       - name: Run tests
+        working-directory: /app
         run: npm test
 
       # Install the cosign tool except on PR
