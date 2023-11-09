@@ -1,11 +1,5 @@
 import fs from "fs";
 import axios from "axios";
-import {
-  countWords,
-  countLetters,
-  countSpaces,
-  findRepeatedWords,
-} from "./textStatistics.js";
 
 // read text from url or file
 const readText = (path) =>
@@ -32,11 +26,4 @@ const readText = (path) =>
     }
   });
 
-const makeFileStatistics = (text) => ({
-  wordCount: countWords(text),
-  letterCount: countLetters(text),
-  spaceCount: countSpaces(text),
-  repeatedWords: findRepeatedWords(text, 10),
-});
-
-export { readText, makeFileStatistics };
+export { readText };

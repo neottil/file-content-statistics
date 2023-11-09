@@ -39,4 +39,11 @@ const findRepeatedWords = (text, minOccurs) => {
   return Object.fromEntries(filtered);
 };
 
-export { countWords, countLetters, countSpaces, findRepeatedWords };
+const textStatistics = (text, minOccurs = 10) => ({
+  wordCount: countWords(text),
+  letterCount: countLetters(text),
+  spaceCount: countSpaces(text),
+  repeatedWords: findRepeatedWords(text, minOccurs),
+});
+
+export { textStatistics };

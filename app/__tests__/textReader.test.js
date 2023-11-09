@@ -1,9 +1,10 @@
-import { readText, makeFileStatistics } from "../textReader.js";
+import { readText } from "../textReader.js";
+import { textStatistics } from "../textStatistics.js";
 
 test("Make statistics", () => {
   return readText("./__tests__/testFile.txt").then((text) => {
     const { wordCount, letterCount, spaceCount, repeatedWords } =
-      makeFileStatistics(text);
+      textStatistics(text);
     expect(wordCount).toBe(88);
     expect(letterCount).toBe(407);
     expect(spaceCount).toBe(74);

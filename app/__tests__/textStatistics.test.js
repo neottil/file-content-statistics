@@ -1,19 +1,23 @@
-import {
-  countWords,
-  countLetters,
-  countSpaces,
-  findRepeatedWords,
-} from "../textStatistics.js";
+import { textStatistics } from "../textStatistics.js";
 
-const TEST_STRING = "Questo è un esempio di multi-tasking test.";
+describe("Test text statistcs functions", () => {
+  const statistics = textStatistics(
+    "Questo è un esempio di multi-tasking test."
+  );
 
-test("Count words", () => expect(countWords(TEST_STRING)).toBe(7));
+  test("Count words", () => expect(statistics.wordCount).toBe(7));
 
-test("Count letters", () => expect(countLetters(TEST_STRING)).toBe(34));
+  test("Count letters", () => expect(statistics.letterCount).toBe(34));
 
-test("Count spaces", () => expect(countSpaces(TEST_STRING)).toBe(6));
+  test("Count spaces", () => expect(statistics.spaceCount).toBe(6));
+});
 
-test("Find repeated words", () => {
-  const text = "Parola parola ripetuta Test Ripetuta";
-  expect(findRepeatedWords(text, 2)).toEqual({ parola: 2, ripetuta: 2 });
+describe("Test repeated words function", () => {
+  const statistics = textStatistics("Parola parola ripetuta Test Ripetuta", 2);
+  test("Repeated words", () => {
+    expect(statistics.repeatedWords).toEqual({
+      parola: 2,
+      ripetuta: 2,
+    });
+  });
 });
