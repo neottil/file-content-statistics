@@ -1,2 +1,2 @@
 # file-content-statistics
-Count word, cletters, spaces, repeated word (up to 10 occurens)
+Counting words, letters, spaces, repeated words (at least 10 occurrences) in node.js
