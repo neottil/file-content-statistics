@@ -9,7 +9,6 @@ const prompt = readline.createInterface({
 prompt.question("Enter the file path or URL of the file: ", (path) => {
   readText(path)
     .then((text) => {
-      console.log(text);
       const fileStatistics = makeFileStatistics(text);
 
       console.log(
